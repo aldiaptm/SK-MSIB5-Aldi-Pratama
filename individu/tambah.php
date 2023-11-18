@@ -72,14 +72,13 @@
                             $query = mysqli_query($conn, "SELECT * FROM jenis_kue");
                             if (mysqli_num_rows($query) > 0) {
                                 while ($data = mysqli_fetch_array($query)) {
-                                    echo "<option value='" . $data["jenis_kue_id"] . "'>" . $data["jenis_kue_id"] . "</option>";
+                                    echo "<option value='" . $data["jenis_kue_id"] . "'>" . $data["nama_jenis"] . "</option>";
                                 }
                             } else {
                                 echo "<option value=''>No items available</option>";
                             }
                             ?>
-                        </select>
-                        <p>1. Brownies | 2. Bolu Bakar | 3. Bolu Kukus</p>
+                        </select><br>
                     </div>
                     <div class="form-group">
                         <label for="supplier_id">Supplier:</label>
@@ -89,14 +88,13 @@
                             $query = mysqli_query($conn, "SELECT * FROM supplier");
                             if (mysqli_num_rows($query) > 0) {
                                 while ($data = mysqli_fetch_array($query)) {
-                                    echo "<option value='" . $data["supplier_id"] . "'>" . $data["supplier_id"] . "</option>";
+                                    echo "<option value='" . $data["supplier_id"] . "'>" . $data["nama_supplier"] . "</option>";
                                 }
                             } else {
                                 echo "<option value=''>No items available</option>";
                             }
                             ?>
-                        </select>
-                        <p>1. Cakeis | 2. Kue Bunda | 3. Goodcake</p>
+                        </select><br>
                     </div>
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </form>

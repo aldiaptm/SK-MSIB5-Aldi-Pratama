@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2023 at 07:08 AM
+-- Generation Time: Nov 18, 2023 at 05:51 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -38,7 +38,7 @@ CREATE TABLE `jenis_kue` (
 
 INSERT INTO `jenis_kue` (`jenis_kue_id`, `nama_jenis`) VALUES
 (1, 'Brownies'),
-(2, 'Bolu Bakar'),
+(2, 'Bolu Bakar Arang'),
 (3, 'Bolu Kukus');
 
 -- --------------------------------------------------------
@@ -92,9 +92,12 @@ INSERT INTO `varian_kue` (`varian_kue_id`, `jenis_kue_id`, `supplier_id`, `nama_
 (3, 1, 1, 'Brownies Strawberi', 'image/brownies-strawberi.jpg', '50000.00', 'Kue Brownies Strawberi dengan tingkat kemanisan yang pas dan aman untuk dikonsumsi sehari-hari.', 23, '2023-11-08 18:01:15', '2023-11-14 10:10:07'),
 (4, 3, 3, 'Bolu Kukus Pandan', 'image/bolu-kukus-pandan.jfif', '35000.00', 'Bolu Kukus Pandan ini salah satu produk Best Seller, ayo cepat order hanya di Sarirasa!', 12, '2023-11-08 18:16:35', '2023-11-14 10:09:17'),
 (5, 2, 2, 'Bolu Bakar Coklat Matang', 'image/bolu-bakar-coklat.jfif', '35000.00', 'Bolu Bakar dengan teknik pemanggangan ala Sarirasa yang tentunya akan memanjakan mulut anda!', 39, '2023-11-08 18:35:12', '2023-11-14 10:06:56'),
-(6, 2, 3, 'Bolu Bakar Ketan', 'image/bolu-bakar-ketan.jfif', '60000.00', 'Bolu ketan ini sangat nikmat saat dikonsumsi dengan teh hangat, jadi langsung order bolu ketan di Sarirasa!', 4, '2023-11-08 19:56:32', '2023-11-14 10:07:38'),
+(6, 2, 3, 'Bolu Bakar Ketan Hitam', 'image/bolu-bakar-ketan.jfif', '60000.00', 'Bolu ketan ini sangat nikmat saat dikonsumsi dengan teh hangat, jadi langsung order bolu ketan di Sarirasa!', 4, '2023-11-08 19:56:32', '2023-11-14 21:12:06'),
 (8, 2, 1, 'Bolu Gulung', 'image/bolu-gulung.jfif', '28000.00', 'Bolu Gulung yang digulung seperti menggulung tikar, rasa yang sangat alami dan aman untuk dikonsumsi.', 70, '2023-11-08 21:16:27', '2023-11-14 10:08:18'),
-(16, 2, 1, 'Bolu Bakar Pisang', 'image/blp.jfif', '50000.00', 'Bolu Pisang Bakar dengan pisang yang sangat terasa di lidah, ayo buruan dibeli jangan sampai kehabisan!', 9, '2023-11-14 11:22:47', NULL);
+(16, 2, 1, 'Bolu Bakar Pisang', 'image/blp.jfif', '50000.00', 'Bolu Pisang Bakar dengan pisang yang sangat terasa di lidah, ayo buruan dibeli jangan sampai kehabisan!', 9, '2023-11-14 11:22:47', NULL),
+(18, 1, 1, 'Bolu Kusut', 'image/gambar-profile.jpg', '45000.00', 'Bolu Kukus Pandan ini salah satu produk Best Seller, ayo cepat order hanya di Sarirasa!', 12, '2023-11-14 21:19:06', NULL),
+(23, 3, 3, 'Bolu Kusut Pandan', 'image/bsl.jfif', '80000.00', 'Bolu Kukus Pandan ini salah satu produk Best Seller, ayo cepat order hanya di Sarirasa!', 43, '2023-11-16 19:10:00', '2023-11-16 19:10:33'),
+(27, 1, 3, 'Bolu Kusut Strawberi', 'image/brownies-strawberi.jpg', '45000.00', 'Bolu Bakar coklat dengan tingkat kemanisan yang pas dan aman untuk dikonsumsi sehari-hari.', 32, '2023-11-18 11:35:00', NULL);
 
 --
 -- Indexes for dumped tables
@@ -128,19 +131,19 @@ ALTER TABLE `varian_kue`
 -- AUTO_INCREMENT for table `jenis_kue`
 --
 ALTER TABLE `jenis_kue`
-  MODIFY `jenis_kue_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `jenis_kue_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `supplier`
 --
 ALTER TABLE `supplier`
-  MODIFY `supplier_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `supplier_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `varian_kue`
 --
 ALTER TABLE `varian_kue`
-  MODIFY `varian_kue_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `varian_kue_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- Constraints for dumped tables

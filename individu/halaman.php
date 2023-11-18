@@ -17,19 +17,22 @@ function getProductsWithPagination($page, $results_per_page)
             ?>
             <div class="col-md-4">
                 <div class="col-md-12">
-                    <div class="card" style="">
+                    <div class="card" style="background-color: transparent !important;">
                         <center>
-                            <img src="<?php echo $query['gambar_kue']; ?>" class="card-img-top"
-                                alt="<?php echo $query['nama_varian']; ?>">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <?php echo $query['nama_varian']; ?>
-                                </h5>
-                                <p class="card-text">Harga: Rp.
-                                    <?php echo $query['harga']; ?>
-                                </p>
-                                <a href="view.php?varian_kue_id=<?php echo $query['varian_kue_id']; ?>" class="btn btn-primary">View Details</a>
-                            </div>
+                            <strong>
+                                <img src="<?php echo $query['gambar_kue']; ?>" class="card-img-top"
+                                    alt="<?php echo $query['nama_varian']; ?>">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <?php echo $query['nama_varian']; ?>
+                                    </h5>
+                                    <p class="card-text">Harga: Rp.
+                                        <?php echo $query['harga']; ?>
+                                    </p>
+                                    <a href="view.php?varian_kue_id=<?php echo $query['varian_kue_id']; ?>"
+                                        class="btn btn-primary">View Details</a>
+                                </div>
+                            </strong>
                         </center>
                     </div>
                 </div>

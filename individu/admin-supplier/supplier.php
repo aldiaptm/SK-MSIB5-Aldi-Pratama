@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Halaman Admin</title>
+    <title>Admin Supplier</title>
     <link rel="stylesheet" href="https://adminlte.io/themes/v3/dist/css/adminlte.min.css">
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -25,7 +25,7 @@
         }
 
         body {
-            background-image: url("image/bg-admin3.jpg") !important;
+            background-image: url("../image/bg-admin3.jpg") !important;
         }
 
         footer {
@@ -38,7 +38,7 @@
     <div class="wrapper">
         <aside class="main-sidebar sidebar-light-primary elevation-4"
             style="position: fixed; top: 0; left: 0; bottom: 0;">
-            <img src="image/gambar-profile.jpg" alt=""
+            <img src="../image/gambar-profile.jpg" alt=""
                 style="width: 100px; border-radius: 100%; margin-left: 40px; margin-top: 20px;"><br><br>
             <span class="brand-text font-weight-light" style="font-size: 22px; margin-left: 22px;">Admin
                 Sarirasa</span>
@@ -48,31 +48,31 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="../admin-fix.php" class="nav-link">
                                 <i class="nav-icon fas fa-cog"></i>
                                 <p>Admin</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="admin-jenis/jenis.php" class="nav-link">
+                            <a href="../admin-jenis/jenis.php" class="nav-link">
                                 <i class="nav-icon fas fa-cog"></i>
                                 <p>Jenis Kue</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="admin-supplier/supplier.php" class="nav-link">
+                            <a href="supplier.php" class="nav-link">
                                 <i class="nav-icon fas fa-cog"></i>
                                 <p>Supplier</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="index.php" class="nav-link">
+                            <a href="../index.php" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>Home</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="about.php" class="nav-link">
+                            <a href="../about.php" class="nav-link">
                                 <i class="nav-icon fas fa-cog"></i>
                                 <p>About</p>
                             </a>
@@ -86,37 +86,30 @@
             <div class="row">
                 <div class="col-sm-12">
                     <?php
-                    include 'koneksi.php';
-                    $query = mysqli_query($conn, "SELECT c.varian_kue_id, c.nama_varian, c.gambar_kue, c.harga, c.deskripsi, c.stok, j.nama_jenis, s.nama_supplier from varian_kue as c JOIN jenis_kue as j on c.jenis_kue_id=j.jenis_kue_id join supplier as s on c.supplier_id=s.supplier_id ORDER BY created_at DESC;");
+                    include '../koneksi.php';
+                    $query = mysqli_query($conn, "SELECT * FROM supplier;");
                     ?>
-                    <center>
-                    </center>
-                    <p style="font-size: 20px; margin-top: 70px;"><strong>Data Kue Sarirasa</strong></p><br>
-                    <a class="btn btn-info" style="margin-bottom:10px; margin-top:-10px" href="tambah.php"> Tambah Kue
+                    <p style="font-size: 20px; margin-top: 70px;"><strong>Data Supplier</strong></p><br>
+                    <a class="btn btn-info" style="margin-bottom:10px; margin-top:-10px" href="tambah.php"> Tambah
+                        Supplier
                     </a>
-                    <table id="hadeuh" class="table table-bordered" style="">
+                    <table id="datatabel" class="table table-bordered" style="">
                         <thead>
                             <tr style="text-align: center;">
                                 <th>
-                                    Varian
-                                </th>
-                                <th style="width: 200px;">
-                                    Gambar
+                                    Supplier ID
                                 </th>
                                 <th>
-                                    Harga
+                                    Nama Supplier
                                 </th>
                                 <th>
-                                    Deskripsi
+                                    Alamat
                                 </th>
                                 <th>
-                                    Stok
+                                    Telepon
                                 </th>
                                 <th>
-                                    Jenis Kue
-                                </th>
-                                <th>
-                                    Supplier
+                                    Email
                                 </th>
                                 <th>
                                     Aksi
@@ -130,33 +123,27 @@
                                     ?>
                                     <tr>
                                         <td>
-                                            <?php echo $data["nama_varian"] ?>
-                                        </td>
-                                        <td>
-                                            <img src="<?php echo $data['gambar_kue']; ?>" class="card-img-top"
-                                                style="width: 200px;">
-                                        </td>
-                                        <td>
-                                            <?php echo $data["harga"] ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $data["deskripsi"] ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $data["stok"] ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $data["nama_jenis"] ?>
+                                            <?php echo $data["supplier_id"] ?>
                                         </td>
                                         <td>
                                             <?php echo $data["nama_supplier"] ?>
                                         </td>
-                                        <td> <a href="hapus.php?varian_kue_id=<?php echo $data["varian_kue_id"] ?>"
+                                        <td>
+                                            <?php echo $data["alamat_supplier"] ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $data["nomor_telepon"] ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $data["email"] ?>
+                                        </td>
+                                        <td> <a href="hapus.php?supplier_id=<?php echo $data["supplier_id"] ?>"
                                                 class="label label-danger"> Delete
                                             </a>
-                                            &nbsp; <a href="edit.php?varian_kue_id=<?php echo $data["varian_kue_id"] ?>"
-                                                class="label label-warning"> Edit
-                                            </a></td>
+                                            &nbsp; <a href="edit.php?supplier_id=<?php echo $data["supplier_id"] ?>"
+                                                class="label label-warning"> Ubah
+                                            </a>
+                                        </td>
                                     </tr>
 
                                 <?php } ?>
@@ -177,8 +164,9 @@
     <script src="https://adminlte.io/themes/v3/dist/js/adminlte.min.js"></script> -->
     <script>
         $(document).ready(function () {
-            $('#hadeuh').DataTable();
+            $('#datatabel').DataTable();
         });
     </script>
 </body>
+
 </html>

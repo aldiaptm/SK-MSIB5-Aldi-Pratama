@@ -9,10 +9,12 @@
 
   <style>
     .navbar {
-      background-color: lightcyan;
+      background-color: transparent;
+      font-weight: bold;
     }
 
     body {
+      background-image: url("image/bg-image5.jpg");
       text-align: center;
     }
 
@@ -31,7 +33,11 @@
       margin-bottom: 50px;
     }
 
-    .pagination {
+    footer {
+      position: static;
+      background-color: transparent;
+      font-size: 13px;
+      font-weight: 100;
     }
   </style>
 </head>
@@ -39,7 +45,8 @@
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="#"><strong>KUE SARIRASA</strong></a>
+    <a class="navbar-brand" href="#"><img src="image/logo-kue.png" alt=""
+        style="width: 60px !important; height: 40px !important;"><strong>KUE SARIRASA</strong></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -53,7 +60,13 @@
           <a class="nav-link" href="about.php">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Services</a>
+          <a class="nav-link" href="#">Category</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Service</a>
         </li>
       </ul>
     </div>
@@ -64,9 +77,8 @@
     <h1>Macam-macam Kue Sarirasa</h1>
     <div class="row">
       <?php
-      include 'halaman.php'; // Panggil file halaman.php
-      
-      // Panggil fungsi getProductsWithPagination dan displayPagination di sini
+      include 'halaman.php';
+
       $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
       $productsPerPage = 3;
 
@@ -80,13 +92,21 @@
         ?>
       </center>
     </div>
+    <p><strong>Produk yang kami sajikan, merupakan kualitas terbaik dari yang terbaik. Supplier yang memasukkan kepada
+        kami,
+        merupakan supplier terpilih dari beberapa supplier yang ingin memasukkan produknya kepada kami.</strong></p>
   </div>
 
-  <!-- Bootstrap JavaScript and jQuery -->
+
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
+<footer>
+  <div class="footer">©Copyright|Aldi Pratama
+  </div>
+</footer>
 
 </html>
